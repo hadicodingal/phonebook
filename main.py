@@ -1,3 +1,5 @@
+phonebook={}
+
 def addcontact( phonebook,name,number):
     if  name in phonebook:
       print("This contact already exsists")
@@ -24,8 +26,41 @@ def allcontact(phonebook):
 
             print(f"{name}: {number}")
 
-             print("------------------------")
+            print("------------------------")
+def menu():
+    while True:
+        print("\nPhonebook Menu:")
+        print("1. Add Contact")
+        print("2. Get Contact")
+        print("3. Delete Contact")
+        print("4. Display Contacts")
+        print("5. Exit")
+        choice = int(input("Enter your choice (1-5): "))
+        if choice == 1:
+            name = input("Enter contact name: ")
+            number = input("Enter contact number: ")
+            addcontact(phonebook,name, number)
+        elif choice==2:
+           name=input("enter the name to search :")
+           searchcontact(phonebook,name)
+        elif choice==3:
+           name=input("enter the contact name to delete")
+           deletecontact(phonebook,name)
+        elif choice==4:
+           allcontact(phonebook)
+        elif choice==5:
+           break
+        else :
+           print("invalid input")
+menu()
+    
 
+
+
+                
+           
+         
+       
     
       
      
